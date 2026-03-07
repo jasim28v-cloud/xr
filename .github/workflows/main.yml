@@ -2,8 +2,11 @@ name: Update Servers 15min
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # تحديث تلقائي كل 15 دقيقة
-  workflow_dispatch: # للتشغيل اليدوي الفوري
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write # هذا السطر يمنح الصلاحية اللازمة للكتابة
 
 jobs:
   build:
