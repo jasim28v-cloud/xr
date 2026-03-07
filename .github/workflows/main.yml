@@ -1,9 +1,9 @@
-name: Update Servers
+name: Update Servers 15min
 
 on:
   schedule:
-    - cron: '0 * * * *' # يعمل كل رأس ساعة
-  workflow_dispatch: # يسمح لك بتشغيله يدوياً
+    - cron: '*/15 * * * *' # تحديث تلقائي كل 15 دقيقة
+  workflow_dispatch: # للتشغيل اليدوي الفوري
 
 jobs:
   build:
@@ -28,5 +28,5 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add index.html
-          git commit -m "تحديث تلقائي للسيرفرات" || exit 0
+          git commit -m "تحديث دوري (15 دقيقة)" || exit 0
           git push
